@@ -20,6 +20,12 @@ pub enum Error {
 
     /// Invalid signature: {0}
     Signature(String),
+
+    /// DB Access Error
+    DBError,
+
+    /// Block validation failed: {0}
+    BlockValidation(String),
 }
 
 impl std::error::Error for Error {}
