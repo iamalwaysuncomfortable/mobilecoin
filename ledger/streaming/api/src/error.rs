@@ -3,6 +3,7 @@
 use displaydoc::Display;
 use grpcio::Error as GrpcError;
 use mc_api::ConversionError;
+use mc_consensus_scp::SlotIndex;
 use mc_crypto_keys::SignatureError;
 use protobuf::ProtobufError;
 
@@ -22,10 +23,10 @@ pub enum Error {
     Signature(String),
 
     /// Ledger DB Access Error
-    DBError,
+    DBAccess,
 
-    /// SCP Consensus Error
-    ConsensusError,
+    /// SCP Consensus Behind: last externalized block {0} - highest block {1}
+    ConsensusBlocked(SlotIndex, SlotIndex),
 }
 
 impl std::error::Error for Error {}
