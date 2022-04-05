@@ -23,6 +23,7 @@ mc-util-uri = { path = "../../../util/uri" }
 displaydoc = "0.2"
 futures = "0.3"
 grpcio = "0.10"
+hashbrown = "0.12.0"
 pin-project = "1.0.10"
 
 [build-dependencies]
